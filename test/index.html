@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Shall We Play a game?</title>
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Ubuntu" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div id="cardTable">
+      <button name="gameStart" id="startButton">Begin Game</button>
+    </div>
+    <form id="cardConfigs" method="GET">
+      <div class="introConfig">
+        <label name="numberOfPlayers">How many players are playing?</label>
+        <div class="inputContainer">
+          <input type="text" name="numberOfPlayers">
+        </div>
+      </div>
+      <div id="playerNames" class="introConfig">
+        <label for="playerNames">What are their names?</label>
+        <div class="inputContainer"></div>
+      </div>
+      <div class="introConfig">
+        <label name="aceHigh">Aces high?</label>
+        <div class="inputContainer">
+          <input id="acesHigh" type="radio" name="aceHigh" value="true" checked>
+          <label for="acesHigh">Yes</label>
+          <div class="newRadio"></div>
+        </div>
+        <div class="inputContainer">
+          <input id="acesLow" type="radio" name="aceHigh" value="false">
+          <label for="acesLow">Nope</label>
+          <div class="newRadio"></div>
+        </div>
+      </div>
+      <div class="introConfig">
+        <label name="suits">Which suits are you using?</label>
+        <div class="inputContainer">
+          <input type="checkbox" name="suits" value="heart" checked>
+          <label for="suits">Hearts</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="suits" value="spade" checked>
+          <label for="suits">Spades</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="suits" value="diamond" checked>
+          <label for="suits">Diamonds</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="suits" value="club" checked>
+          <label for="suits">Clubs</label>
+        </div>
+      </div>
+      <div class="introConfig">
+        <label name="cards">Which cards are included?</label>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="Ace" checked>
+          <label for="cards">Ace</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="2" checked>
+          <label for="cards">2</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="3" checked>
+          <label for="cards">3</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="4" checked>
+          <label for="cards">4    </label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="5" checked>
+          <label for="cards">5</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="6" checked>
+          <label for="cards">6   </label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="7" checked>
+          <label for="cards">7                    </label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="8" checked>
+          <label for="cards">8                    </label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="9" checked>
+          <label for="cards">9</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="10" checked>
+          <label for="cards">10</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="Jack" checked>
+          <label for="cards">Jack</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="Queen" checked>
+          <label for="cards">Queen</label>
+        </div>
+        <div class="inputContainer">
+          <input type="checkbox" name="cards" value="King" checked>
+          <label for="cards">King</label>
+        </div>
+      </div>
+      <input type="submit" value="Are Your sure?">
+    </form>
+    <div class="pulse"></div>
+    <div class="innerPulse"></div>
+    <div class="pulse"></div>
+    <div class="innerPulse"></div>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

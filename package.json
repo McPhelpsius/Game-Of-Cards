@@ -1,0 +1,44 @@
+{
+  "name": "gulpprocess",
+  "version": "0.1.0",
+  "description": "Investigating for our new version of ehwo. Preprocessors, templating, libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "EHWO!"
+  },
+  "keywords": [
+    "Angular",
+    "Babel",
+    "Gulp",
+    "Connect",
+    "Browserify",
+    "SASS",
+    "Imagemin",
+    "Uglify",
+    "Jade"
+  ],
+  "author": "Nathan Phelps",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-angular": "^6.0.15",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bourbon": "^4.2.7",
+    "node-bourbon": "^4.2.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git1.dev.nids.noaa.gov:nphelps/Gulp"
+  }
+}

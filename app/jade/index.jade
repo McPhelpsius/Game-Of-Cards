@@ -1,0 +1,98 @@
+doctype html
+html(ng-app="app")
+    head
+        title Shall We Play a game?
+        link(href='https://fonts.googleapis.com/css?family=Arvo:400,700|Ubuntu' rel='stylesheet' type='text/css')
+        link(rel="stylesheet" href="assets/css/main.css")
+    body
+        #cardTable
+            button(name="gameStart" id="startButton") Begin Game
+    
+        form#cardConfigs(method="GET")
+            div.introConfig
+                label(name="numberOfPlayers") How many players are playing?
+                div.inputContainer
+                    input(type="text" name="numberOfPlayers")
+            
+            div#playerNames.introConfig
+                label(for="playerNames") What are their names?
+                div.inputContainer
+                
+
+            div.introConfig
+                label(name="aceHigh") Aces high?
+                div.inputContainer
+                    input#acesHigh(type="radio" name="aceHigh" value="true" checked)
+                    label(for="acesHigh") Yes
+                    div.newRadio
+                div.inputContainer
+                    input#acesLow(type="radio" name="aceHigh" value="false")
+                    label(for="acesLow") Nope
+                    div.newRadio
+                    
+            
+            div.introConfig
+                label(name="suits") Which suits are you using?
+                div.inputContainer
+                    input(type="checkbox" name="suits" value="heart" checked)
+                    label(for="suits") Hearts
+                div.inputContainer
+                    input(type="checkbox" name="suits" value="spade" checked)
+                    label(for="suits") Spades
+                div.inputContainer
+                    input(type="checkbox" name="suits" value="diamond" checked)
+                    label(for="suits") Diamonds
+                div.inputContainer
+                    input(type="checkbox" name="suits" value="club" checked)
+                    label(for="suits") Clubs
+                
+            div.introConfig
+                label(name="cards") Which cards are included?
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="Ace" checked)
+                    label(for="cards") Ace
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="2" checked)
+                    label(for="cards") 2
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="3" checked)
+                    label(for="cards") 3
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="4" checked)
+                    label(for="cards") 4    
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="5" checked)
+                    label(for="cards") 5
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="6" checked)
+                    label(for="cards") 6   
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="7" checked)
+                    label(for="cards") 7                    
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="8" checked)
+                    label(for="cards") 8                    
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="9" checked)
+                    label(for="cards") 9
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="10" checked)
+                    label(for="cards") 10
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="Jack" checked)
+                    label(for="cards") Jack
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="Queen" checked)
+                    label(for="cards") Queen
+                div.inputContainer
+                    input(type="checkbox" name="cards" value="King" checked)
+                    label(for="cards") King
+            
+            input(type="submit" value="Are Your sure?")
+        div.pulse
+        .innerPulse
+        div.pulse
+        .innerPulse
+            
+        script(src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous")
+        script(src="assets/js/scripts.js")

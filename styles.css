@@ -1,0 +1,32 @@
+.flex {
+    display: flex;
+}
+    
+body {
+    margin: 0;
+}
+
+#table {
+    border: 4px solid brown;
+    display: flex;
+    flex-direction: column;
+    background: #67A88D;
+    height: 100vh;
+}
+
+.card {
+    background: #FFF;
+    border: thin solid black;
+    text-align: center;
+    border-radius: 5px;
+    font-size: .5rem;
+    flex: 1 0 50px;
+    margin: .5rem .2rem;   
+}
+    
+.hand {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: true;
+    margin: .2rem 0;   
+}
