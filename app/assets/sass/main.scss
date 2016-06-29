@@ -10,21 +10,27 @@ body {
     font-size: 12;
 }
 
-h1, h3, h5, label{
-    font-family: 'Arvo', serif}
-h2, h4, h6{
-    font-family: 'Ubuntu', sans-serif}
-h1, h2{
+h1, h3, h5, label {
+    font-family: 'Arvo', serif
+}
+
+h2, h4, h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2 {
     font-weight: 700
 }
-#table{
+
+#cardTable {
     border: 4px solid brown;
     display: flex;
     flex-direction: column;
     background: #67A88D;
     height: 100vh;
 }
-.card{  
+
+.card {
     background: #FFF;
     border: thin solid black;
     text-align: center;
@@ -32,7 +38,7 @@ h1, h2{
     font-size: .5rem;
     flex: 1 0 50px;
     margin: .5rem .2rem;
-    }
+}
     
 .hand {
     flex: 1 1 auto;
@@ -40,7 +46,8 @@ h1, h2{
     flex-wrap: true;
     margin: .2rem 0;
 }
-#cardConfigs{
+
+#cardConfigs {
     @extend .flex;
     flex-direction: column;
     font-family: 'Arvo';
@@ -64,12 +71,29 @@ h1, h2{
         position: relative;
     }
 }
-.inputContainer{
+
+.inputContainer {
     @extend .flex
 }
 
-#playerNames {
+#playerNames  {
     flex-direction: column;
+}
+
+input[type="text"] {
+    width: 16rem;
+    height: 1.8rem;
+    margin: 1rem;
+    font-size: 1.4rem;
+    padding: .4rem .5rem;
+    border: 0;
+    border-bottom: thin solid #DDD;
+    transition: box-shadow .1s linear;
+
+    &:focus {
+        outline: 0;
+        box-shadow: inset 0 0 3px rgb(220, 220, 220);
+    }
 }
 
 input[type="radio"] {
@@ -89,6 +113,11 @@ input[type="radio"] {
             margin: -500vh 0 0 -250vw;
         }
     }
+}
+
+button, input[type="submit"] {
+    position: relative;
+    z-index: 10000;
 }
 
 .newRadio {
@@ -131,33 +160,17 @@ input[type="radio"] {
     }
 }
 
-input[type="text"] {
-    width: 16rem;
-    height: 1.8rem;
-    margin: 1rem;
-    font-size: 1.4rem;
-    padding: .4rem .5rem;
-    border: 0;
-    border-bottom: thin solid #DDD;
-    transition: box-shadow .1s linear;
-
-    &:focus {
-        outline: 0;
-        box-shadow: inset 0 0 3px rgb(220, 220, 220);
-    }
-}
-
 @include selection {
     background-color: #ffbb52;
 }
 
 .element {
-    @include selection(true) {
+    @include selection( true ) {
         background-color: #ffbb52;
     }
 }
 
-@include keyframes (innerBorderPulse){
+@include keyframes ( innerBorderPulse ){
     0% { border: thin solid; opacity: 0; };
     20% { border-color: #FFF; opacity: .8; };
     80% { opacity: 1; border-color: #FFF; }; 

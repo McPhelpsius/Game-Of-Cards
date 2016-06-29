@@ -1,13 +1,13 @@
 (function ($) {
 
-    if (!!location.search) {
-        document.forms[0].hidden = true;
+    if ( !!location.search ) {
+        document.forms[0].style.display = "none";
     } else {
-        document.querySelector('#cardTable').hidden = true;
+        document.querySelector('#cardTable').style.display = "none";
     }
 
-    const playerNumberInput = document.querySelector('input[name="numberOfPlayers"]'),
-        playerInputsTarget = document.getElementById('playerNames'),
+    const playerNumberInput = document.querySelector( 'input[name="numberOfPlayers"]' ),
+        playerInputsTarget = document.getElementById( 'playerNames' ),
         playerNameInputMarkup = `<input type="text" name="playerNames" required>`;
 
     playerNumberInput.addEventListener( "keyup", function ( ) {
@@ -36,9 +36,9 @@
 
     });
 
-    let inputs = document.querySelectorAll('input'),
-        pulseDots = document.querySelectorAll('.pulse'),
-        innerPulseDots = document.querySelectorAll('.innerPulse'),
+    let inputs = document.querySelectorAll( 'input' ),
+        pulseDots = document.querySelectorAll( '.pulse' ),
+        innerPulseDots = document.querySelectorAll( '.innerPulse' ),
         pulseIndex = 0,
         nextPulse = pulseDots[0],
         pulseColors = ['#D3DA92', '#E962D7'],

@@ -21,14 +21,14 @@ Play a round
 },{"./classes/Game":4}],2:[function(require,module,exports){
 (function ($) {
 
-    if (!!location.search) {
-        document.forms[0].hidden = true;
+    if ( !!location.search ) {
+        document.forms[0].style.display = "none";
     } else {
-        document.querySelector('#cardTable').hidden = true;
+        document.querySelector('#cardTable').style.display = "none";
     }
 
-    const playerNumberInput = document.querySelector('input[name="numberOfPlayers"]'),
-        playerInputsTarget = document.getElementById('playerNames'),
+    const playerNumberInput = document.querySelector( 'input[name="numberOfPlayers"]' ),
+        playerInputsTarget = document.getElementById( 'playerNames' ),
         playerNameInputMarkup = `<input type="text" name="playerNames" required>`;
 
     playerNumberInput.addEventListener( "keyup", function ( ) {
@@ -57,9 +57,9 @@ Play a round
 
     });
 
-    let inputs = document.querySelectorAll('input'),
-        pulseDots = document.querySelectorAll('.pulse'),
-        innerPulseDots = document.querySelectorAll('.innerPulse'),
+    let inputs = document.querySelectorAll( 'input' ),
+        pulseDots = document.querySelectorAll( '.pulse' ),
+        innerPulseDots = document.querySelectorAll( '.innerPulse' ),
         pulseIndex = 0,
         nextPulse = pulseDots[0],
         pulseColors = ['#D3DA92', '#E962D7'],
@@ -132,7 +132,7 @@ let Player = require('./Player');
 
 class Game {
     constructor(){
-        this.table = document.getElementById('table');
+        this.table = document.getElementById('cardTable');
         this.whoseTurnIndex = 0;
         this.removed = [];
         this.discardPile = [];

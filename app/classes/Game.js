@@ -6,7 +6,7 @@ let Player = require('./Player');
 
 class Game {
     constructor(){
-        this.table = document.getElementById('table');
+        this.table = document.getElementById('cardTable');
         this.whoseTurnIndex = 0;
         this.removed = [];
         this.discardPile = [];
