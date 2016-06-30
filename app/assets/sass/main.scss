@@ -1,5 +1,12 @@
 @import "bourbon";
 
+$black: #000000;
+$light-brown: #663300;
+$dark-brown: #751308;
+$dark-orange: #CC6600;
+$marigold: #C99F3A;
+$hunter-green: #339900; 
+
 .flex {
     @include display (flex);
 }
@@ -27,11 +34,72 @@ h1, h2 {
     font-weight: 700
 }
 
+button, input[type="submit"] {
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    z-index: 10000;
+    @include appearance (none);
+    outline: 0;
+    border: 2px solid #222;
+    border-radius: 8px;
+    background: $marigold;
+    padding: .7rem;
+    font-size: 2rem;
+
+        &.disappear {
+            animation: disappear 1s linear forwards;
+        }
+}
+
+input[type="text"] {
+    width: 16rem;
+    height: 1.8rem;
+    margin: 1rem;
+    font-size: 1.4rem;
+    padding: .4rem .5rem;
+    border: 0;
+    border-bottom: thin solid #DDD;
+    transition: box-shadow .1s linear;
+
+    &:focus {
+        outline: 0;
+        box-shadow: inset 0 0 3px rgb(220, 220, 220);
+    }
+}
+
+input[type="radio"] {
+    visibility: hidden;
+    order: -2;
+
+    &:checked {
+
+        &~ .newRadio{
+            background: #208998;
+        }
+
+        &~ .pulse {
+            opacity: 1;
+            height: 1000vh;
+            width: 500vw;
+            margin: -500vh 0 0 -250vw;
+        }
+    }
+}
+
+#startScreen {
+    width: 100%;
+    @include display (flex);
+    background: $dark-brown;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
 #cardTable {
     @extend .flex-column;
     
-    border: 4px solid brown;
-    background: #67A88D;
+    border: 4px solid $dark-brown;
+    background: $hunter-green;
     height: 100vh;
 }
 
@@ -77,12 +145,15 @@ h1, h2 {
 
 .cardIcon {
     @include align-items (center);
-    // @include align-self (flex-start);
 }
     
 .hand {
     @extend .flex;
     margin: .2rem 0;
+
+    h1 {
+        align-self: center;
+    }
 }
 
 .handCards {
@@ -90,6 +161,7 @@ h1, h2 {
     @include flex (1 1 auto);
     @include flex-wrap (wrap);
     margin: .2rem 0;
+    justify-content: center;
 }
 
 #cardConfigs {
@@ -117,46 +189,6 @@ h1, h2 {
 
 .inputContainer {
     @extend .flex
-}
-
-input[type="text"] {
-    width: 16rem;
-    height: 1.8rem;
-    margin: 1rem;
-    font-size: 1.4rem;
-    padding: .4rem .5rem;
-    border: 0;
-    border-bottom: thin solid #DDD;
-    transition: box-shadow .1s linear;
-
-    &:focus {
-        outline: 0;
-        box-shadow: inset 0 0 3px rgb(220, 220, 220);
-    }
-}
-
-input[type="radio"] {
-    visibility: hidden;
-    order: -2;
-
-    &:checked {
-
-        &~ .newRadio{
-            background: #208998;
-        }
-
-        &~ .pulse {
-            opacity: 1;
-            height: 1000vh;
-            width: 500vw;
-            margin: -500vh 0 0 -250vw;
-        }
-    }
-}
-
-button, input[type="submit"] {
-    position: relative;
-    z-index: 10000;
 }
 
 .newRadio {
@@ -231,20 +263,3 @@ button, input[type="submit"] {
         opacity: .8;
     }
 }
-
-// }
-//             .animate({
-//                 "width": '3rem',
-//                 "height": '3rem'
-//             }, 200)
-//             .delay(400)
-//             .animate({
-//                 opacity: 0
-//             }, 200)
-
-
-
-// okay, plan for the day
-// We need to move to CSS classes, not all that
-
-//

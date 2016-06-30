@@ -91,7 +91,7 @@ class Game {
         this.beginAHand();
     }
 
-    enterPlayers(){
+    enterPlayers () {
         this.numberOfPlayers = this.gameSettings.numberOfPlayers;
         const players = [];
         for(let player = 0; player < this.numberOfPlayers; player++){
@@ -120,7 +120,7 @@ class Game {
         return this.players[0];
     }
 
-    clearHands(){
+    clearHands () {
         
         for( let p = 0; p < this.players.length; p++ ){
             if(this.players[p].cards){
@@ -163,6 +163,7 @@ class Game {
         // let one player play a card at a time
         this.players[0].takeTurn();
     }
+
     whoWon () {
         // need winning player, the high value, winning card
         let highValue = 0,
@@ -189,7 +190,6 @@ class Game {
         for (let t = (theseHTML.length-2); t < theseHTML.length; t++) {
             $(theseHTML[t]).animate({'margin-left': '-46px'}).delay(300).animate({'margin-left': '-60px'});
         }
-
     }
 
     nextPlayer ( ) {
@@ -199,14 +199,9 @@ class Game {
         } else {
             this.whoseTurnIndex++;
             this.players[this.whoseTurnIndex].takeTurn();
-        }
-        
+        }     
     }
-
   
 }
-
-// play hand
-
 
 module.exports = Game;

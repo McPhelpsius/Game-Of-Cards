@@ -4,7 +4,7 @@ class Player {
         this.cards = [];
         this.gameInstance = gameInstance;
         this.myTurn = false;
-        this.handTemplate = `<section id="${this.name}" class="hand"><h1>${this.name}</h1>
+        this.handTemplate = `<section id="${this.name}" class="hand flex-column"><h1>${this.name}</h1>
                 <div class="handCards flex"></div>
             </section>`;
     }

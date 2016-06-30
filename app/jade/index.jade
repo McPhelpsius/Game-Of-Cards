@@ -5,9 +5,9 @@ html(ng-app="app")
         link(href='https://fonts.googleapis.com/css?family=Arvo:400,700|Ubuntu' rel='stylesheet' type='text/css')
         link(rel="stylesheet" href="assets/css/main.css")
     body
+        .flex#startScreen
+            button(name="gameStart" id="startButton") Begin Game
         #cardTable
-            .flex
-                button(name="gameStart" id="startButton") Begin Game
             .flex
                 #thisHand.flex
     
