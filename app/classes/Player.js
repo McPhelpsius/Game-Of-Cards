@@ -38,8 +38,8 @@ class Player {
     }
     
     playCard (card, cards, cardsHTML) {
-        cardsHTML.removeChild(cards.item([].indexOf.call(cards, card)));
-
+        let thisHandCard = cardsHTML.removeChild(cards.item([].indexOf.call(cards, card)));
+        this.gameInstance.tablePlayedCards.appendChild(thisHandCard);
         // for ( let e = 0; e < cards.length; e++) {
         //     cards[e].removeEventListener("click", function () {
         //         console.log(cards[e], e);

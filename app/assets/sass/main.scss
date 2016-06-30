@@ -1,13 +1,18 @@
 @import "bourbon";
 
 .flex {
-    display: flex;
+    @include display (flex);
+}
+
+.flex-column {
+    @extend .flex;
+    @include flex-direction (column);
 }
     
 
 body {
     margin: 0;
-    font-size: 12;
+    font-size: 12px;
 }
 
 h1, h3, h5, label {
@@ -23,9 +28,9 @@ h1, h2 {
 }
 
 #cardTable {
+    @extend .flex-column;
+    
     border: 4px solid brown;
-    display: flex;
-    flex-direction: column;
     background: #67A88D;
     height: 100vh;
 }
@@ -36,20 +41,58 @@ h1, h2 {
     text-align: center;
     border-radius: 5px;
     font-size: .5rem;
-    flex: 1 0 50px;
+    @include flex (0 0 67px);
     margin: .5rem .2rem;
+
+    h1 {
+        font-size: 1.4rem;
+        margin-top: 3px;
+        margin-bottom: 3px
+    }
+}
+
+.cardNumber {
+    font-size: 11px;
+    @include align-self (center);
+    font-weight: 500;
+}
+
+.topLeftIcon {
+    @include align-self (flex-start);
+
+    .cardNumber {
+        margin-right: .075rem;
+        margin-left: .3rem;
+    }
+}
+
+.bottomRightIcon {
+    @include align-self (flex-end);
+
+    &> svg{
+        margin-left: .1rem;
+        margin-right: .3rem;
+    }
+}
+
+.cardIcon {
+    @include align-items (center);
+    // @include align-self (flex-start);
 }
     
 .hand {
-    flex: 1 1 auto;
-    display: flex;
-    flex-wrap: true;
+    @extend .flex;
+    margin: .2rem 0;
+}
+
+.handCards {
+    @extend .flex;
+    @include flex (1 1 auto);
+    @include flex-wrap (wrap);
     margin: .2rem 0;
 }
 
 #cardConfigs {
-    @extend .flex;
-    flex-direction: column;
     font-family: 'Arvo';
     z-index: 30;
     overflow: hidden;
@@ -59,11 +102,11 @@ h1, h2 {
     }
 }
 .introConfig {
-    flex: 1 1 100vh;
     @extend .flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex (1 1 100vh);
+    @include flex-direction (column);
+    @include justify-content (center);
+    @include align-items (center);
     z-index: 40;
 
     &> input, &> label {
@@ -74,10 +117,6 @@ h1, h2 {
 
 .inputContainer {
     @extend .flex
-}
-
-#playerNames  {
-    flex-direction: column;
 }
 
 input[type="text"] {

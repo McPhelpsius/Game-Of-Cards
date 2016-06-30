@@ -6,15 +6,18 @@ html(ng-app="app")
         link(rel="stylesheet" href="assets/css/main.css")
     body
         #cardTable
-            button(name="gameStart" id="startButton") Begin Game
+            .flex
+                button(name="gameStart" id="startButton") Begin Game
+            .flex
+                #thisHand.flex
     
-        form#cardConfigs(method="GET")
+        form#cardConfigs.flex-column(method="GET")
             div.introConfig
                 label(name="numberOfPlayers") How many players are playing?
                 div.inputContainer
                     input(type="text" name="numberOfPlayers")
             
-            div#playerNames.introConfig
+            div#playerNames.introConfig.flex-column
                 label(for="playerNames") What are their names?
                 div.inputContainer
                 
@@ -88,7 +91,9 @@ html(ng-app="app")
                     input(type="checkbox" name="cards" value="King" checked)
                     label(for="cards") King
             
-            input(type="submit" value="Are Your sure?")
+            .introConfig
+                h2 Are you sure?
+                input(type="submit" value="Yes!")
         div.pulse
         .innerPulse
         div.pulse

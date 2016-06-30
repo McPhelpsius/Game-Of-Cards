@@ -7,16 +7,21 @@
   </head>
   <body>
     <div id="cardTable">
-      <button name="gameStart" id="startButton">Begin Game</button>
+      <div class="flex">
+        <button name="gameStart" id="startButton">Begin Game</button>
+      </div>
+      <div class="flex">
+        <div id="thisHand" class="flex"></div>
+      </div>
     </div>
-    <form id="cardConfigs" method="GET">
+    <form id="cardConfigs" method="GET" class="flex-column">
       <div class="introConfig">
         <label name="numberOfPlayers">How many players are playing?</label>
         <div class="inputContainer">
           <input type="text" name="numberOfPlayers">
         </div>
       </div>
-      <div id="playerNames" class="introConfig">
+      <div id="playerNames" class="introConfig flex-column">
         <label for="playerNames">What are their names?</label>
         <div class="inputContainer"></div>
       </div>
@@ -107,7 +112,10 @@
           <label for="cards">King</label>
         </div>
       </div>
-      <input type="submit" value="Are Your sure?">
+      <div class="introConfig">
+        <h2>Are you sure?</h2>
+        <input type="submit" value="Yes!">
+      </div>
     </form>
     <div class="pulse"></div>
     <div class="innerPulse"></div>

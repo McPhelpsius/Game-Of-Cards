@@ -10,19 +10,18 @@ class Card {
     
     createIcon(name){
         return Number.isNaN(parseInt(name)) ? name.split('')[0] : name;
-
     }
     
     template ( ) {
-        return `<div class="card">
-            <h3>
+        return `<div class="card flex-column">
+            <h3 class="topLeftIcon cardIcon flex">
+                <div class="cardNumber">${this.icon}</div>
                 ${this.smallSVG}
-                <span>${this.icon}</span>
             </h3>
-                ${this.suitSVG}
-            <h3>
+            <h1>${this.icon}</h1>
+            <h3 class="bottomRightIcon cardIcon flex">
+                <div class="cardNumber">${this.icon}</div>
                 ${this.smallSVG}
-                <span>${this.icon}</span>
             </h3>
         </div>`;
     }

@@ -10,11 +10,11 @@ class Spade extends Card {
           <polygon points="22,12 12,0 2,12" style="fill:black" />
           <polygon points="18,24 12,10 6,24" style="fill:black" />
         </svg>`;
-        this.smallSVG = `<svg width="15" height="15" >
-          <circle cx="8" cy="9" r="3" style="fill:black" />
-          <circle cx="4" cy="9" r="3" style="fill:black" />
-          <polygon points="11,8 6,0 1,8" style="fill:black" />
-          <polygon points="10,15 6,10 2,15" style="fill:black" />
+        this.smallSVG = `<svg width="10" height="11" >
+          <circle cx="6 " cy="7" r="2" style="fill:black" />
+          <circle cx="2" cy="7" r="2" style="fill:black" />
+          <polygon points="8,6 4,0 0,6" style="fill:black" />
+          <polygon points="6,11 4,7 2,11" style="fill:black" />
         </svg>`;
         
     }    

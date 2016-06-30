@@ -13,6 +13,7 @@ class Game {
         this.handCounter = 0;
         this.currentHandCards = [];
         this.currentTrickCards = [];
+        this.tablePlayedCards = document.getElementById('thisHand');
         this.spade = Spade;
         this.heart = Heart;
         this.diamond = Diamond;
