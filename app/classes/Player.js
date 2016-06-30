@@ -40,15 +40,7 @@ class Player {
     playCard (card, cards, cardsHTML) {
         let thisHandCard = cardsHTML.removeChild(cards.item([].indexOf.call(cards, card)));
         this.gameInstance.tablePlayedCards.appendChild(thisHandCard);
-        // for ( let e = 0; e < cards.length; e++) {
-        //     cards[e].removeEventListener("click", function () {
-        //         console.log(cards[e], e);
-        //     });
-        // }
-        
-        ///////////
-        ////// Update what $cards is ----> $theseCards not $theCards
-        ///////////
+        document.getElementById('thisHand').appendChild(thisHandCard);
         return this.cards.splice([].indexOf.call(cards, card), 1)[0];
     }
     

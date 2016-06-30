@@ -25,6 +25,10 @@ class Card {
             </h3>
         </div>`;
     }
+
+    trickEndAnimation (previousSiblingOffset) {
+        return previousSiblingOffset + 28;
+    }
 }
 
 module.exports = Card;

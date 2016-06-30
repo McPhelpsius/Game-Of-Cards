@@ -13,7 +13,7 @@ class Game {
         this.handCounter = 0;
         this.currentHandCards = [];
         this.currentTrickCards = [];
-        this.tablePlayedCards = document.getElementById('thisHand');
+        this.tablePlayedCards = this.table.querySelector('#thisHand');
         this.spade = Spade;
         this.heart = Heart;
         this.diamond = Diamond;
@@ -176,10 +176,20 @@ class Game {
                 winningPlayer = this.players[x];
             }             
         }
-
+        this.trickEndCardAnimations();
         console.log(winningPlayer.name + ' won with a ' + winningCard.name + ' of ' + winningCard.suit);
         this.currentTrickCards = [];
         this.playATrick();
+    }
+
+    trickEndCardAnimations () {
+        let firstCardOffsetLeft = document.getElementById("thisHand").querySelector('.card').offsetLeft;
+        let theseHTML = document.getElementById("thisHand").querySelectorAll('.card');
+        let these = this.currentTrickCards;
+        for (let t = (theseHTML.length-2); t < theseHTML.length; t++) {
+            $(theseHTML[t]).animate({'margin-left': '-46px'}).delay(300).animate({'margin-left': '-60px'});
+        }
+
     }
 
     nextPlayer ( ) {
@@ -188,7 +198,7 @@ class Game {
             this.whoWon();
         } else {
             this.whoseTurnIndex++;
-            this.players[this.whoseTurnIndex].takeTurn( );
+            this.players[this.whoseTurnIndex].takeTurn();
         }
         
     }

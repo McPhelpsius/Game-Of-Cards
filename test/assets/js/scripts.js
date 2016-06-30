@@ -119,6 +119,10 @@ class Card {
             </h3>
         </div>`;
     }
+
+    trickEndAnimation (previousSiblingOffset) {
+        return previousSiblingOffset + 28;
+    }
 }
 
 module.exports = Card;
@@ -138,7 +142,7 @@ class Game {
         this.handCounter = 0;
         this.currentHandCards = [];
         this.currentTrickCards = [];
-        this.tablePlayedCards = document.getElementById('thisHand');
+        this.tablePlayedCards = this.table.querySelector('#thisHand');
         this.spade = Spade;
         this.heart = Heart;
         this.diamond = Diamond;
@@ -301,10 +305,20 @@ class Game {
                 winningPlayer = this.players[x];
             }             
         }
-
+        this.trickEndCardAnimations();
         console.log(winningPlayer.name + ' won with a ' + winningCard.name + ' of ' + winningCard.suit);
         this.currentTrickCards = [];
         this.playATrick();
+    }
+
+    trickEndCardAnimations () {
+        let firstCardOffsetLeft = document.getElementById("thisHand").querySelector('.card').offsetLeft;
+        let theseHTML = document.getElementById("thisHand").querySelectorAll('.card');
+        let these = this.currentTrickCards;
+        for (let t = (theseHTML.length-2); t < theseHTML.length; t++) {
+            $(theseHTML[t]).animate({'margin-left': '-46px'}).delay(300).animate({'margin-left': '-60px'});
+        }
+
     }
 
     nextPlayer ( ) {
@@ -313,7 +327,7 @@ class Game {
             this.whoWon();
         } else {
             this.whoseTurnIndex++;
-            this.players[this.whoseTurnIndex].takeTurn( );
+            this.players[this.whoseTurnIndex].takeTurn();
         }
         
     }
@@ -368,15 +382,7 @@ class Player {
     playCard (card, cards, cardsHTML) {
         let thisHandCard = cardsHTML.removeChild(cards.item([].indexOf.call(cards, card)));
         this.gameInstance.tablePlayedCards.appendChild(thisHandCard);
-        // for ( let e = 0; e < cards.length; e++) {
-        //     cards[e].removeEventListener("click", function () {
-        //         console.log(cards[e], e);
-        //     });
-        // }
-        
-        ///////////
-        ////// Update what $cards is ----> $theseCards not $theCards
-        ///////////
+        document.getElementById('thisHand').appendChild(thisHandCard);
         return this.cards.splice([].indexOf.call(cards, card), 1)[0];
     }
     
