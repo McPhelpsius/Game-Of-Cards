@@ -187,7 +187,7 @@ class Game {
         let firstCardOffsetLeft = document.getElementById("thisHand").querySelector('.card').offsetLeft;
         let theseHTML = document.getElementById("thisHand").querySelectorAll('.card');
         let these = this.currentTrickCards;
-        for (let t = (theseHTML.length-2); t < theseHTML.length; t++) {
+        for (let t = (theseHTML.length - this.players.length + 1); t < theseHTML.length; t++) {
             $(theseHTML[t]).animate({'margin-left': '-46px'}).delay(300).animate({'margin-left': '-60px'});
         }
     }
@@ -203,5 +203,10 @@ class Game {
     }
   
 }
+
+
+
+///Rotate screen
+///On player's cards at a time
 
 module.exports = Game;
