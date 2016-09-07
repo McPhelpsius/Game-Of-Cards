@@ -91,7 +91,7 @@ input[type="radio"] {
 #cardTable {
   border: 4px solid #751308;
   background: #339900;
-  height: 100vh; }
+  min-height: 100vh; }
 
 .card {
   background: #FFF;
@@ -128,6 +128,12 @@ input[type="radio"] {
   .topLeftIcon .cardNumber {
     margin-right: .075rem;
     margin-left: .3rem; }
+
+#thisHand {
+  flex: 1 1 auto; }
+
+.trickContainer {
+  flex: 1 1 auto; }
 
 .bottomRightIcon {
   -webkit-align-self: flex-end;

@@ -100,7 +100,7 @@ input[type="radio"] {
     
     border: 4px solid $dark-brown;
     background: $hunter-green;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .card {
@@ -132,6 +132,14 @@ input[type="radio"] {
         margin-right: .075rem;
         margin-left: .3rem;
     }
+}
+
+#thisHand {
+    flex: 1 1 auto;
+}
+
+.trickContainer {
+    flex: 1 1 auto;
 }
 
 .bottomRightIcon {

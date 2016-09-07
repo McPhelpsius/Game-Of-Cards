@@ -143,6 +143,7 @@ class Game {
         this.handCounter = 0;
         this.currentHandCards = [];
         this.currentTrickCards = [];
+        this.trickIndex = 0;
         this.tablePlayedCards = this.table.querySelector('#thisHand');
         this.spade = Spade;
         this.heart = Heart;
@@ -280,6 +281,7 @@ class Game {
     }
 
     beginAHand () {
+        this.trickIndex = 0;
         this.playATrick();
     }
 
@@ -291,6 +293,9 @@ class Game {
 
     playATrick () {
         // let one player play a card at a time
+        var trickContainer = document.createElement("div");
+        trickContainer.className = "trickContainer flex";
+        document.getElementById('thisHand').appendChild(trickContainer);
         this.players[0].takeTurn();
     }
 
@@ -300,6 +305,8 @@ class Game {
             winningCard = {},
             winningPlayer = {};
 
+        let thisTrickDisplay = document.getElementById('thisHand').querySelectorAll('.trickContainer')[this.trickIndex];
+
         for (let x = 0; x < this.currentTrickCards.length; x++ ) {
             if (this.currentTrickCards[x].value > highValue) {
                 highValue = this.currentTrickCards[x].value;
@@ -308,18 +315,29 @@ class Game {
             }             
         }
         this.trickEndCardAnimations();
-        console.log(winningPlayer.name + ' won with a ' + winningCard.name + ' of ' + winningCard.suit);
+        let winnerTitle = document.createElement('div').innerText = winningPlayer.name;
+        thisTrickDisplay.innerHTML += winnerTitle;
         this.currentTrickCards = [];
+        this.trickIndex++;
         this.playATrick();
     }
 
     trickEndCardAnimations () {
-        let firstCardOffsetLeft = document.getElementById("thisHand").querySelector('.card').offsetLeft;
-        let theseHTML = document.getElementById("thisHand").querySelectorAll('.card');
+
+        /// TODO: this isn't configured to '.trickContainer'... fix it
+        let trickContainers = document.getElementById("thisHand").querySelectorAll('.trickContainer');
+        let latestTrickContainer = trickContainers[trickContainers.length-1];
+        // let firstCardOffsetLeft = document.getElementById("thisHand").querySelector('.card').offsetLeft;
+        let firstCardOffsetLeft = latestTrickContainer.querySelector('.card').offsetLeft;
+        // let theseHTML = document.getElementById("thisHand").querySelectorAll('.card');
+        // let theseHTML = latestTrickContainer.querySelectorAll('.card');
+        let theseHTML = $('#thisHand').find('.trickContainer').last().find('.card');
         let these = this.currentTrickCards;
+        ///screwy///
         for (let t = (theseHTML.length - this.players.length + 1); t < theseHTML.length; t++) {
             $(theseHTML[t]).animate({'margin-left': '-46px'}).delay(300).animate({'margin-left': '-60px'});
         }
+
     }
 
     nextPlayer ( ) {
@@ -335,9 +353,8 @@ class Game {
 }
 
 
+// the trick containers exist, place cards inside them
 
-///Rotate screen
-///On player's cards at a time
 
 module.exports = Game;
 },{"./Player":5,"./cards/Club":6,"./cards/Diamond":7,"./cards/Heart":8,"./cards/Spade":9}],5:[function(require,module,exports){
@@ -383,7 +400,8 @@ class Player {
     playCard (card, cards, cardsHTML) {
         let thisHandCard = cardsHTML.removeChild(cards.item([].indexOf.call(cards, card)));
         this.gameInstance.tablePlayedCards.appendChild(thisHandCard);
-        document.getElementById('thisHand').appendChild(thisHandCard);
+        let currentTrickContainer = document.getElementById('thisHand').querySelectorAll('.trickContainer')[this.gameInstance.trickIndex]; 
+        currentTrickContainer.appendChild(thisHandCard);
         return this.cards.splice([].indexOf.call(cards, card), 1)[0];
     }
     

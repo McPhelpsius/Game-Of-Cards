@@ -40,7 +40,8 @@ class Player {
     playCard (card, cards, cardsHTML) {
         let thisHandCard = cardsHTML.removeChild(cards.item([].indexOf.call(cards, card)));
         this.gameInstance.tablePlayedCards.appendChild(thisHandCard);
-        document.getElementById('thisHand').appendChild(thisHandCard);
+        let currentTrickContainer = document.getElementById('thisHand').querySelectorAll('.trickContainer')[this.gameInstance.trickIndex]; 
+        currentTrickContainer.appendChild(thisHandCard);
         return this.cards.splice([].indexOf.call(cards, card), 1)[0];
     }
     
