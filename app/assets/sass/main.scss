@@ -140,6 +140,17 @@ input[type="radio"] {
 
 .trickContainer {
     flex: 1 1 auto;
+    position: relative;
+}
+
+.trickWinner {
+    position: absolute;
+    animation: fadein 1s;
+    font-size: 1.3rem;
+    font-family: 'Ubuntu', sans-serif;
+    background: rgba(200,200,200, .6);
+    top: 30%;
+    left: 20%;
 }
 
 .bottomRightIcon {
@@ -270,4 +281,9 @@ input[type="radio"] {
         width: 200vw;
         opacity: .8;
     }
+}
+
+@include keyframes ( fadein ) {
+    0% {opacity: 0}
+    100% {opacity: 1}
 }

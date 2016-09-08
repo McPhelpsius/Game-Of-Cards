@@ -184,15 +184,16 @@ class Game {
                 winningPlayer = this.players[x];
             }             
         }
-        this.trickEndCardAnimations();
-        let winnerTitle = document.createElement('div').innerText = winningPlayer.name;
-        thisTrickDisplay.innerHTML += winnerTitle;
+        this.trickEndCardAnimations(winningPlayer);
+        // let winnerTitle = document.createElement('div').innerText = winningPlayer.name;
+        // // winnerTitle.className = 'trickWinner';
+        // thisTrickDisplay.innerHTML += winnerTitle;
         this.currentTrickCards = [];
         this.trickIndex++;
         this.playATrick();
     }
 
-    trickEndCardAnimations () {
+    trickEndCardAnimations (winner) {
 
         /// TODO: this isn't configured to '.trickContainer'... fix it
         let trickContainers = document.getElementById("thisHand").querySelectorAll('.trickContainer');
@@ -208,6 +209,11 @@ class Game {
             $(theseHTML[t]).animate({'margin-left': '-46px'}).delay(300).animate({'margin-left': '-60px'});
         }
 
+        let winnerTitle = document.createElement('div')
+        let winnerText = document.createTextNode(winner.name);
+        winnerTitle.appendChild(winnerText);
+        winnerTitle.className = 'trickWinner';
+        latestTrickContainer.appendChild(winnerTitle);
     }
 
     nextPlayer ( ) {
