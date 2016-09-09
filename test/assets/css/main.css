@@ -19,6 +19,29 @@
   flex-direction: column;
   -ms-flex-direction: column; }
 
+.hyphen-break, .trickWinner {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; }
+
+.flex-quarter {
+  -webkit-flex-shrink: 1;
+  -moz-flex-shrink: 1;
+  flex-shrink: 1;
+  -ms-flex-negative: 1;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 25%;
+  -moz-flex-basis: 25%;
+  flex-basis: 25%;
+  -ms-flex-preferred-size: 25%; }
+
 body {
   margin: 0;
   font-size: 12px; }
@@ -133,7 +156,7 @@ input[type="radio"] {
   flex: 1 1 auto; }
 
 .trickContainer {
-  flex: 1 1 auto;
+  flex: 0 0 8rem;
   position: relative; }
 
 .trickWinner {
@@ -141,9 +164,10 @@ input[type="radio"] {
   animation: fadein 1s;
   font-size: 1.3rem;
   font-family: 'Ubuntu', sans-serif;
-  background: rgba(200, 200, 200, 0.6);
+  background: rgba(160, 200, 150, 0.9);
   top: 30%;
-  left: 20%; }
+  right: 1.5rem;
+  max-width: 70%; }
 
 .bottomRightIcon {
   -webkit-align-self: flex-end;
@@ -194,6 +218,15 @@ input[type="radio"] {
   overflow: hidden; }
   #cardConfigs label {
     font-size: 1.3rem; }
+
+#cardGrid {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 .introConfig {
   -webkit-box-flex: 1;
