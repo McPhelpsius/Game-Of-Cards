@@ -203,6 +203,12 @@ class Game {
         &cards=Queen&cards=Queen&cards=Queen&cards=Queen
         &cards=King&cards=King&cards=King&cards=King
         &suits=heart&cards=6&cards=7&cards=8&cards=9&cards=10&cards=Jack&cards=Queen&cards=King`*/
+
+
+        // `&cards=Ace&cards=2&cards=3&cards=4&cards=6&cards=7&cards=8&cards=10&cards=Jack&cards=Queen&cards=King&cards=Ace&cards=2&cards=3&cards=4&cards=6&cards=7&cards=9&cards=10&cards=Jack&cards=Queen&cards=King&cards=Ace&cards=2&cards=3&cards=4&cards=5&cards=6&cards=7&cards=8&cards=9&cards=10&cards=Jack&cards=Queen&cards=King&suits=diamond&cards=Ace&cards=2&cards=3&cards=4&cards=5&cards=6&cards=7&cards=8&cards=9&cards=10&cards=Jack&cards=Queen&cards=King`
+
+        // ?numberOfPlayers=3&playerNames=P&playerNames=U&playerNames=G&aceHigh=false&suits=spade&cards=Ace-spade&cards=2-spade&cards=3-spade&cards=5-spade&cards=6-spade&cards=8-spade&cards=9-spade&cards=10-spade&cards=Jack-spade&cards=Queen-spade&cards=King-spade&cards=Ace-heart&cards=2-heart&cards=3-heart&cards=5-heart&cards=6-heart&cards=8-heart&cards=9-heart&cards=10-heart&cards=Jack-heart&cards=Queen-heart&cards=King-heart&suits=club&cards=Ace-club&cards=2-club&cards=3-club&cards=4-club&cards=5-club&cards=6-club&cards=7-club&cards=8-club&cards=9-club&cards=10-club&cards=Jack-club&cards=Queen-club&cards=King-club&suits=diamond&cards=Ace-diamond&cards=2-diamond&cards=3-diamond&cards=4-diamond&cards=5-diamond&cards=6-diamond&cards=7-diamond&cards=8-diamond&cards=9-diamond&cards=10-diamond&cards=Jack-diamond&cards=Queen-diamond&cards=King-diamond
+
         let gameConfigs = {},
             configDataArray = location.search.slice(1).split("&");
         
