@@ -210,6 +210,11 @@ input[type="radio"] {
     }
 }
 
+
+#allCardsConfig {
+    position: relative;
+    z-index: 30;
+}
 #cardGrid {
     @include flex-wrap(wrap);
 }

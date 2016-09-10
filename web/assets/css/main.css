@@ -219,6 +219,10 @@ input[type="radio"] {
   #cardConfigs label {
     font-size: 1.3rem; }
 
+#allCardsConfig {
+  position: relative;
+  z-index: 30; }
+
 #cardGrid {
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;

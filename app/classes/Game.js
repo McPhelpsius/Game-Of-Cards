@@ -57,6 +57,22 @@ class Game {
     configureDeck () {
         
         /// deckSettings = {ace: 'low', suits: ['Hearts', 'Spades', 'Diamonds', 'Clubs'], cards: [13], cardValues: []}
+
+
+        /*`cards=Ace&cards=Ace&cards=Ace&cards=Ace
+        &cards=2&cards=2&cards=2&cards=2
+        &cards=3&cards=3&cards=3&cards=
+        3&cards=4&cards=4&cards=4&cards=4
+        &cards=5&cards=5&cards=5&cards=5
+        &cards=6&cards=6&cards=6&cards=6
+        &cards=7&cards=7&cards=7&cards=7
+        &cards=8&cards=8&cards=8&cards=8
+        &cards=9&cards=9&cards=9&cards=9
+        &cards=10&cards=10&cards=10&cards=10
+        &cards=Jack&cards=Jack&cards=Jack&cards=Jack
+        &cards=Queen&cards=Queen&cards=Queen&cards=Queen
+        &cards=King&cards=King&cards=King&cards=King
+        &suits=heart&cards=6&cards=7&cards=8&cards=9&cards=10&cards=Jack&cards=Queen&cards=King`*/
         let gameConfigs = {},
             configDataArray = location.search.slice(1).split("&");
         
