@@ -81,6 +81,10 @@ class Game {
 
         let gameConfigs = {},
             configDataArray = location.search.slice(1).split("&");
+
+        //- TODO: Suit Buttons will only be for checking/unchecking entire suits at a time. Should not carry a data value.
+
+        // Data construction will be set 'per card', setting suits on the go.
         
         for (var d = 0; d < configDataArray.length; d++) {
             let dat = configDataArray[d].split("="),

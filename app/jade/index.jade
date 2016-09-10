@@ -37,7 +37,12 @@ html(ng-app="app")
              div#allCardsConfig.introConfig
                 div#cardGrid.flex
 
+                        //- Grid Data-Structure Concept:
+                        //- TODO: Cards will carry their own values for card and suit. This will be "split" during configuration.
+                        //- TODO: Suit Buttons will only be for checking/unchecking entire suits at a time
+
                     div.cardGrid-Spades.flex-quarter
+                        //- TODO: Suit Buttons will only be for checking/unchecking entire suits at a time. Should not carry a data value
                         div.inputContainer
                             label(for="AllSpades") Spades
                             input(type="checkbox" id="AllSpades" name="suits" value="spade" checked)            
