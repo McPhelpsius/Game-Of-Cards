@@ -34,18 +34,17 @@ html(ng-app="app")
                     label(for="acesLow") Nope
                     div.newRadio
 
-             div#allCardsConfig.introConfig
-                div#cardGrid.flex
 
                         //- Grid Data-Structure Concept:
                         //- TODO: Cards will carry their own values for card and suit. This will be "split" during configuration.
                         //- TODO: Suit Buttons will only be for checking/unchecking entire suits at a time
 
+             div#allCardsConfig.introConfig
+                div#cardGrid.flex
                     div.cardGrid-Spades.flex-quarter
-                        //- TODO: Suit Buttons will only be for checking/unchecking entire suits at a time. Should not carry a data value
                         div.inputContainer
                             label(for="AllSpades") Spades
-                            input(type="checkbox" id="AllSpades" name="suits" value="spade" checked)            
+                            input(type="checkbox" id="AllSpades" value="spade" checked) 
                         div.inputContainer
                             label(for="SpadesAce") Ace
                                 input(type="checkbox" id="SpadesAce" name="cards" data-suit="spade" value="Ace-spade" checked)
@@ -85,12 +84,10 @@ html(ng-app="app")
                         div.inputContainer
                             label(for="SpadesKing") King
                                 input(type="checkbox" id="SpadesKing" name="cards" data-suit="spade" value="King-spade" checked)
-
                     div.cardGrid-Hearts.flex-quarter
                         div.inputContainer
                             label(for="AllHearts") Hearts
-                                input(type="checkbox" id="AllHearts" name="suits" value="heart" checked)
-                            
+                                input(type="checkbox" id="AllHearts" value="heart" checked)
                         div.inputContainer
                             label(for="HeartsAce") Ace
                                 input(type="checkbox" id="HeartsAce" name="cards" data-suit="heart" value="Ace-heart" checked)
@@ -133,7 +130,7 @@ html(ng-app="app")
                     div.cardGrid-Clubs.flex-quarter
                         div.inputContainer
                             label(for="AllClubs") Clubs
-                                input(type="checkbox" id="AllClubs" name="suits" value="club" checked)                        
+                                input(type="checkbox" id="AllClubs" value="club" checked)                        
                         div.inputContainer
                             label(for="ClubsAce") Ace
                                 input(type="checkbox" id="ClubsAce" name="cards" data-suit="club" value="Ace-club" checked)
@@ -175,8 +172,8 @@ html(ng-app="app")
                                 input(type="checkbox" id="ClubsKing" name="cards" data-suit="club" value="King-club" checked)
                     div.cardGrid-Diamonds.flex-quarter
                         div.inputContainer
-                            label(for="suits") Diamonds
-                                input(type="checkbox" name="suits" value="diamond" checked)                        
+                            label(for="AllDiamonds") Diamonds
+                                input(type="checkbox" id="AllDiamonds" name="suits" value="diamond" checked)                        
                         div.inputContainer
                             label(for="DiamondsAce") Ace
                                 input(type="checkbox" id="DiamondsAce" name="cards" data-suit="diamond" value="Ace-diamond" checked)

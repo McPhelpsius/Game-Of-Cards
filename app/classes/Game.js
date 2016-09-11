@@ -33,22 +33,11 @@ class Game {
             let ace = cardNames.shift();
             cardNames[cardNames.length] = ace;
         }
-        let cardsUsed = this.gameSettings.cards; 
-        let suitsUsed = this.gameSettings.suits;
+        let cardsUsed = this.gameSettings.cards;
+
         for (let c = 0; c < cardsUsed.length; c++) {
-            let cardValue = cardNames.indexOf(cardsUsed[c]);
-            if (suitsUsed.constructor === Array) {
-                for ( let s = 0; s <  suitsUsed.length; s++ ) {
-                    cards[cards.length] = new this[suitsUsed[s]](cardValue, cardsUsed[c]);
-                }    
-            } 
-            else if (suitsUsed.constructor === String) {
-                cards[cards.length] = new this[suitsUsed](cardValue, cardsUsed[c]);
-                
-            }
-            else {
-                alert("Why aren't you using any suits?");
-            }
+            let cardProperties = cardsUsed[c].split('-');
+                cards[cards.length] = new this[cardProperties[1]](cardProperties[0], cardProperties[0]);    
         }
         
         return cards;
@@ -56,35 +45,8 @@ class Game {
 
     configureDeck () {
         
-        /// deckSettings = {ace: 'low', suits: ['Hearts', 'Spades', 'Diamonds', 'Clubs'], cards: [13], cardValues: []}
-
-
-        /*`cards=Ace&cards=Ace&cards=Ace&cards=Ace
-        &cards=2&cards=2&cards=2&cards=2
-        &cards=3&cards=3&cards=3&cards=
-        3&cards=4&cards=4&cards=4&cards=4
-        &cards=5&cards=5&cards=5&cards=5
-        &cards=6&cards=6&cards=6&cards=6
-        &cards=7&cards=7&cards=7&cards=7
-        &cards=8&cards=8&cards=8&cards=8
-        &cards=9&cards=9&cards=9&cards=9
-        &cards=10&cards=10&cards=10&cards=10
-        &cards=Jack&cards=Jack&cards=Jack&cards=Jack
-        &cards=Queen&cards=Queen&cards=Queen&cards=Queen
-        &cards=King&cards=King&cards=King&cards=King
-        &suits=heart&cards=6&cards=7&cards=8&cards=9&cards=10&cards=Jack&cards=Queen&cards=King`*/
-
-
-        // `&cards=Ace&cards=2&cards=3&cards=4&cards=6&cards=7&cards=8&cards=10&cards=Jack&cards=Queen&cards=King&cards=Ace&cards=2&cards=3&cards=4&cards=6&cards=7&cards=9&cards=10&cards=Jack&cards=Queen&cards=King&cards=Ace&cards=2&cards=3&cards=4&cards=5&cards=6&cards=7&cards=8&cards=9&cards=10&cards=Jack&cards=Queen&cards=King&suits=diamond&cards=Ace&cards=2&cards=3&cards=4&cards=5&cards=6&cards=7&cards=8&cards=9&cards=10&cards=Jack&cards=Queen&cards=King`
-
-        // ?numberOfPlayers=3&playerNames=P&playerNames=U&playerNames=G&aceHigh=false&suits=spade&cards=Ace-spade&cards=2-spade&cards=3-spade&cards=5-spade&cards=6-spade&cards=8-spade&cards=9-spade&cards=10-spade&cards=Jack-spade&cards=Queen-spade&cards=King-spade&cards=Ace-heart&cards=2-heart&cards=3-heart&cards=5-heart&cards=6-heart&cards=8-heart&cards=9-heart&cards=10-heart&cards=Jack-heart&cards=Queen-heart&cards=King-heart&suits=club&cards=Ace-club&cards=2-club&cards=3-club&cards=4-club&cards=5-club&cards=6-club&cards=7-club&cards=8-club&cards=9-club&cards=10-club&cards=Jack-club&cards=Queen-club&cards=King-club&suits=diamond&cards=Ace-diamond&cards=2-diamond&cards=3-diamond&cards=4-diamond&cards=5-diamond&cards=6-diamond&cards=7-diamond&cards=8-diamond&cards=9-diamond&cards=10-diamond&cards=Jack-diamond&cards=Queen-diamond&cards=King-diamond
-
         let gameConfigs = {},
             configDataArray = location.search.slice(1).split("&");
-
-        //- TODO: Suit Buttons will only be for checking/unchecking entire suits at a time. Should not carry a data value.
-
-        // Data construction will be set 'per card', setting suits on the go.
         
         for (var d = 0; d < configDataArray.length; d++) {
             let dat = configDataArray[d].split("="),
@@ -104,12 +66,12 @@ class Game {
                 } 
                 
             } else {
+                
                 gameConfigs[datKey].push(datData);
             }
         }
 
         return gameConfigs;
-
     }
     
     start () {
