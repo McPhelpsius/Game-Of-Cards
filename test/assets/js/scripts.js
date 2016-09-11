@@ -159,15 +159,18 @@ class Game {
         this.gameSettings = this.configureDeck();
         let cardNames = ['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King'];
         
-        if (this.gameSettings.aceHigh == "high") {
+        if (this.gameSettings.aceHigh === "true") {
             let ace = cardNames.shift();
             cardNames[cardNames.length] = ace;
         }
+
         let cardsUsed = this.gameSettings.cards;
 
         for (let c = 0; c < cardsUsed.length; c++) {
-            let cardProperties = cardsUsed[c].split('-');
-                cards[cards.length] = new this[cardProperties[1]](cardProperties[0], cardProperties[0]);    
+            let cardProperties = cardsUsed[c].split('-'),
+                cardValue = cardNames.indexOf(cardProperties[0]);
+
+            cards[cards.length] = new this[cardProperties[1]](cardValue, cardProperties[0]);    
         }
         
         return cards;
