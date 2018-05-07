@@ -68,4 +68,18 @@
 
     }
 
+    $('[class="master"]').each(function(){
+        let that = this;
+        $(that).on("click", function(evt){
+            let cardSuit = $(evt.target).closest('.cardGridRow').find('input[type="checkbox"]');
+            // if checked uncheck 
+                cardSuit.each(function(c, card){
+                    card.checked = that.checked;
+                });
+            // if inchecked, check all
+            
+            
+        })
+    });
+
 })(jQuery);

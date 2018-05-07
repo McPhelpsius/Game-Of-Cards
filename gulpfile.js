@@ -13,6 +13,8 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
 // minify assets
     uglify = require('gulp-uglify'),
+    concat = require('gulp-concat-js'),
+    sourcemaps = require('gulp-sourcemaps'),
     imagemin = require('gulp-imagemin');
 
 
@@ -33,6 +35,14 @@ gulp.task('babel-browserify', function () {
         // saves it to the public/js/ directory
         .pipe(gulp.dest('./test/assets/js'))
         .pipe(connect.reload());
+});
+
+gulp.task('js-dependencies', function () {
+    return gulp.src(['./app/assets/js/**/*.js', '!./app/assets/js/site.js'])
+        // .pipe(sourcemaps.init())
+        // .pipe(concat({"target": "lib.js", "entry":"./test/assets/js/scripts.js"}))
+        // .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./test/assets/js'));
 });
 
 // gulp.task('sass', function () {
@@ -79,7 +89,7 @@ gulp.task('watch', function () {
     gulp.watch('./app/**/*.js', ['babel-browserify']);
 });
 
-gulp.task('default', ['sass', 'jade', 'babel-browserify', 'imagemin', 'connect', 'watch']);
+gulp.task('default', ['sass', 'jade', 'js-dependencies', 'babel-browserify', 'imagemin', 'connect', 'watch']);
 
 
 ////////////////////////////////////////////////////////////////
